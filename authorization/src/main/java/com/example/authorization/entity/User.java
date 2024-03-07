@@ -1,5 +1,6 @@
 package com.example.authorization.entity;
 
+import com.example.authorization.config.AttributeEncryptor;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,6 +20,7 @@ public class User {
     private String userName;
 
     @Column(name = "password")
+    @Convert(converter = AttributeEncryptor.class)
     private String password;
 
     @Column(name = "active")
