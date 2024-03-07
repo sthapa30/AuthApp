@@ -1,2 +1,2 @@
 insert into "users".users (username, password, active, roles)
-values ('sailesh','password',true,'role:admin');
+values ('sailesh', crypt('password', gen_salt('bf')),true,'ROLE:ADMIN,ROLE:USER');
